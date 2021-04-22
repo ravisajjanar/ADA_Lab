@@ -1,0 +1,114 @@
+//Selection Sort 
+
+#include<stdio.h>
+
+#include <stdlib.h>
+
+#include<time.h>
+
+int main(){
+
+  int last,arr[5000];
+
+  clock_t end,start;
+
+printf("Enter the Size of array  :");
+
+scanf("%d",&last);
+
+srand(time(NULL));
+
+for(int i=0;i<last;i++){
+
+  arr[i]=rand()%100;
+
+  printf("%d\t",arr[i]);
+
+}printf("\n");
+
+start=clock();
+
+for(int i=0;i<last-1;i++){
+
+  int j=i+1;
+
+  for(;j<last;j++){
+
+    if(arr[j]<arr[i]){
+
+      arr[i]+=arr[j];
+
+      arr[j]=arr[i]-arr[j];
+
+      arr[i]=arr[i]-arr[j];
+
+    }
+
+  }
+
+}end=clock();
+
+printf("Time in sec %f\n",(((double)(end-start))/CLOCKS_PER_SEC));
+
+for(int i=0;i<last;i++){
+
+  printf("%d\t",arr[i]);
+
+}
+
+}
+
+//Outputs of Selection Sort 
+inputSize.  Time 
+1000.       0.0070
+2000.       0.0215
+3000.       0.0437
+4000.       0.0561
+5000.       0.0803
+
+
+//Bubble Sort 
+
+#include<stdio.h>
+
+#include <stdlib.h>
+
+int main(){
+
+  int last,arr[1000];
+
+printf("Enter the Size of array  :");
+
+scanf("%d",&last);
+
+for(int i=0;i<last;i++){
+
+  arr[i]=rand()%20;
+
+  printf("%d\t",arr[i]);
+
+}printf("\n");
+
+for(int i=1;i<last;i++){
+
+  for(int j=0;j<=last-1-i;j++){
+
+    if(arr[j]>arr[j+1]){
+
+    int temp=arr[j];
+
+    arr[j]=arr[j+1];
+
+    arr[j+1]=temp;
+
+    }
+
+  }
+
+}for(int i=0;i<last;i++){
+
+  printf("%d\t",arr[i]);
+
+}
+
+}
